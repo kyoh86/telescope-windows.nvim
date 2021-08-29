@@ -44,6 +44,7 @@ function M.gen_from_window(opts)
   local make_display = function(entry)
     local display_bufname
     if opts.shorten_path then
+      print(2)
       display_bufname = Path:new({entry.filename}):shorten()
     else
       display_bufname = entry.filename
@@ -63,7 +64,7 @@ function M.gen_from_window(opts)
   return function(entry)
     local bufname = entry.info.name ~= "" and entry.info.name or "[No Name]"
     -- if bufname is inside the cwd, trim that part of the string
-    bufname = Path:new({bufname}).normalize(cwd)
+    bufname = Path:new({bufname}):normalize(cwd)
 
     local hidden = entry.info.hidden == 1 and "h" or "a"
     local readonly = vim.api.nvim_buf_get_option(entry.bufnr, "readonly") and "=" or " "
