@@ -24,7 +24,7 @@ function M.gen_from_window(opts)
   local icon_width = 0
   if not disable_devicons then
     local icon, _ = utils.get_devicons("fname", disable_devicons)
-    icon_width = strings.strdisplaywidth(icon)
+    icon_width = strings.strdisplaywidth(icon, 0)
   end
 
   local displayer =
