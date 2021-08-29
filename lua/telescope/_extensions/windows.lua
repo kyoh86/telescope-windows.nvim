@@ -5,6 +5,7 @@ local Path = require("plenary.path")
 local pickers = require "telescope.pickers"
 local entry_display = require("telescope.pickers.entry_display")
 local utils = require("telescope.utils")
+local strings = require("plenary.strings")
 
 local function show_entry_window(prompt_bufnr)
   local entry = actions.get_selected_entry(prompt_bufnr)
@@ -23,7 +24,7 @@ function M.gen_from_window(opts)
   local icon_width = 0
   if not disable_devicons then
     local icon, _ = utils.get_devicons("fname", disable_devicons)
-    icon_width = utils.strdisplaywidth(icon)
+    icon_width = strings.strdisplaywidth(icon)
   end
 
   local displayer =
