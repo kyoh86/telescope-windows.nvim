@@ -1,4 +1,5 @@
 local actions = require "telescope.actions"
+local action_state = require "telescope.actions.state"
 local conf = require "telescope.config".values
 local finders = require "telescope.finders"
 local Path = require("plenary.path")
@@ -8,7 +9,7 @@ local utils = require("telescope.utils")
 local strings = require("plenary.strings")
 
 local function show_entry_window(prompt_bufnr)
-  local entry = actions.get_selected_entry(prompt_bufnr)
+  local entry = action_state.get_selected_entry()
   actions.close(prompt_bufnr)
   local winnr = entry.winnr
   vim.api.nvim_set_current_win(winnr)
