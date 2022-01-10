@@ -45,7 +45,6 @@ function M.gen_from_window(opts)
   local make_display = function(entry)
     local display_bufname
     if opts.shorten_path then
-      print(2)
       display_bufname = Path:new({entry.filename}):shorten()
     else
       display_bufname = entry.filename
@@ -88,6 +87,7 @@ function M.gen_from_window(opts)
 end
 
 M.windows = function(opts)
+  opts = opts or {}
   local winnrs =
     vim.tbl_filter(
     function(w)
