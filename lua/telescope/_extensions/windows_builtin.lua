@@ -167,8 +167,4 @@ M.windows = function(opts)
   ):find()
 end
 
-return require("telescope").register_extension {
-  exports = {
-    windows = M.windows
-  }
-}
+return M
