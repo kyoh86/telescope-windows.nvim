@@ -12,6 +12,14 @@ use{
     'nvim-telescope/telescope.nvim',
   },
   config = function()
+    require'telescope'.setup {
+      extensions = {
+        windows = {
+          -- you can set options for this extension here (like below)
+          -- previewer = false
+        }
+      }
+    }
     require'telescope'.load_extension'windows'
   end,
 }
@@ -19,7 +27,17 @@ use{
 
 ## Usage
 
-`:Telescope windows`
+In viml:
+
+```viml
+:Telescope windows
+```
+
+In lua:
+
+```lua
+require("telescope").extensions.windows.list()
+```
 
 Running `windows` and list windows.
 Selecting one, you can focus it.
