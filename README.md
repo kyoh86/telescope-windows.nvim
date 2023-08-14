@@ -1,5 +1,7 @@
 # telescope-windows.nvim
 
+NOTE: I'm no longer using telescope. So active development has decelerated on the repository.
+
 `telescope-windows` is an extension for
 [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) that lists windows.
 
